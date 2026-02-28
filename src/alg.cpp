@@ -127,18 +127,14 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
                 }
             }
         }
-        if (q <= 1) {
-            isQPrime = false;
-        } else if (q == 2) {
-            isQPrime = true;
-        } else if (q % 2 == 0) {
-            isQPrime = false;
+        if (q % 2 == 0) {
+          isQPrime = false;  
         } else {
             uint64_t limitQ = static_cast<uint64_t>(sqrt(q));
             for (uint64_t i = 3; i <= limitQ; i += 2) {
-                if (q % i == 0) {
-                    isQPrime = false;
-                    break;
+              if (q % i == 0) {
+                isQPrime = false;
+                break;
                 }
             }
         }
